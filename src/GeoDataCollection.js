@@ -175,11 +175,16 @@ GeoDataCollection.prototype.add = function(layer) {
 
     // Force Leaflet to display the layers in the intended order.
     if (defined(this.map)) {
-        for (var layerIndex = 0; layerIndex < this.layers.length; ++layerIndex) {
+        var layerIndex;
+        for (layerIndex = 0; layerIndex < this.layers.length; ++layerIndex) {
             var currentLayer = this.layers[layerIndex];
             if (defined(currentLayer.primitive)) {
                 currentLayer.primitive.setZIndex(layerIndex + 100);
             }
+        }
+
+        if (defined(this._naMask)) {
+            this._naMask.setZIndex(1000000);
         }
     }
 
@@ -1267,6 +1272,7 @@ GeoDataCollection.prototype._viewMap = function(request, layer) {
             }
         }
         provider.setOpacity(0.6);
+
         layer.primitive = provider;
         this.map.addLayer(provider);
     }

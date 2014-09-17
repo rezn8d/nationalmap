@@ -763,6 +763,18 @@ AusGlobeViewer.prototype.selectViewer = function(bCesium) {
         this.mapBaseLayer = new L.BingLayer(BingMapsApi.getKey());
         map.addLayer(this.mapBaseLayer);
 
+        var maskLayer = new L.tileLayer.wms('http://geoserver.research.nicta.com.au/admin_bnds_abs/ows', {
+            layers: 'admin_bnds:NA_MASK',
+            format: 'image/png',
+            transparent: true,
+            exceptions: 'application/vnd.ogc.se_xml'
+        });
+
+        maskLayer.setOpacity(0.6);
+        this.map.addLayer(maskLayer);
+
+        this.geoDataManager._naMask = maskLayer;
+
         //document.getElementById('controls').style.visibility = 'hidden';
         this._navigationWidget.showTilt = false;
         document.getElementById('ausglobe-title-position').style.visibility = 'hidden';
