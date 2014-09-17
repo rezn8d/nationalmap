@@ -529,6 +529,19 @@ AusGlobeViewer.prototype._createCesiumViewer = function(container) {
     var viewer = new Viewer(container, options);
     viewer.extend(viewerEntityMixin);
 
+    var maskLayer = viewer.scene.imageryLayers.addImageryProvider(new WebMapServiceImageryProvider({
+        url : 'http://geoserver.research.nicta.com.au/admin_bnds_abs/ows',
+        layers : 'admin_bnds:NA_MASK',
+        parameters: {
+            format: 'image/png',
+            transparent: true,
+            styles: '',
+            exceptions: 'application/vnd.ogc.se_xml'
+        }
+    }));
+
+    maskLayer.alpha = 0.6;
+
     var lastHeight = 0;
     viewer.scene.preRender.addEventListener(function(scene, time) {
         var container = viewer._container;

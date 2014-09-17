@@ -1236,7 +1236,7 @@ GeoDataCollection.prototype._viewMap = function(request, layer) {
                 };
             }
         }
-        layer.primitive = this.imageryLayersCollection.addImageryProvider(provider);
+        layer.primitive = this.imageryLayersCollection.addImageryProvider(provider, 1);
         layer.primitive.alpha = 0.6;
     }
     else {
