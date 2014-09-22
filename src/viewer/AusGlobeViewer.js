@@ -540,7 +540,7 @@ AusGlobeViewer.prototype._createCesiumViewer = function(container) {
         }
     }));
 
-    maskLayer.alpha = 0.6;
+    maskLayer.alpha = 0.9;
 
     var lastHeight = 0;
     viewer.scene.preRender.addEventListener(function(scene, time) {

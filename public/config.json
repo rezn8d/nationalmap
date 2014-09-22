@@ -11,6 +11,6 @@
         "data.vic.gov.au"
     ],
   "initialDataMenu" : "init_nm.json",
-  "initialCamera" : { "west": 112, "south": -27, "east": 152, "north": -10}
+  "initialCamera" : { "west": 113, "south": -26, "east": 151, "north": -10}
 }
 
