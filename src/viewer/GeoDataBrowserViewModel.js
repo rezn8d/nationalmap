@@ -172,6 +172,11 @@ var GeoDataBrowserViewModel = function(options) {
             (defined(item.isEnabled) && !item.isEnabled())) {
             return;
         }
+        
+        if ((item.layer.extent.east - item.layer.extent.west) > 3.14) {
+            console.log('Extent is wider than half the world.  Ignoring zoomto');
+            return;
+        }
 
         ga('send', 'event', 'dataSource', 'zoomTo', item.Title());
         item.layer.zoomTo = true;

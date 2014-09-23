@@ -33,7 +33,11 @@ function filterHeaders(req, headers) {
     if (remote.host === 'programs.communications.gov.au'){
         result['Authorization'] = 'Basic d21zOndtcw==';
     }
-
+/*
+    if (remote.host === 'www2.landgate.wa.gov.au'){
+        result['Authorization'] = 'Basic a2VpdGhncjpOaWN0YTIwMTM=';
+    }
+*/    
     return result;
 }
 

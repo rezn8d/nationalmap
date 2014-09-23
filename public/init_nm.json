@@ -178,8 +178,8 @@
         {"Name":"taxation-statistics-2011-12:95d9e550_8b36_4273_8df7_2b76c140e73a","Title":"Taxation statistics 2011-12","queryable":"1"}
     ]},
     { "name": "Northern Australia Fires", "base_url": "http://138.80.129.56:8887/mapviewer/wms", "type": "WMS", "proxy": true },
-    { "name": "Northern Territory", "base_url": "http://wms1.ntlis.nt.gov.au/ilismap", "type": "WMS", "proxy": true },
-    { "name": "Western Australia", "base_url": "http://www2.landgate.wa.gov.au/ows/wfspublic_4326/wfs", "type": "WFS", "proxy": true }
+    { "name": "Northern Territory Government", "base_url": "http://wms1.ntlis.nt.gov.au/ilismap", "type": "WMS", "proxy": true },
+    { "name": "Western Australia Government", "base_url": "http://www2.landgate.wa.gov.au/ows/wfspublic_4326/wfs", "type": "WFS", "proxy": true }
   ]}
   ],
   "NMServices": [
